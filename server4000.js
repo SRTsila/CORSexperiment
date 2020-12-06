@@ -18,7 +18,7 @@ server.on('request', function (req, res) {
     }
 
     if (urlParsed.pathname === '/customer/another') {
-        let answer = {"Name": "Bob", "Id" : 123};
+        let answer = {"Name": "Bob", "Id" : 1};
         let message = `${cb_name}(${JSON.stringify(answer)})`
         res.end(message)
     }
