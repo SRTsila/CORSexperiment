@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function addScript(src) {
+                let newElem = document.createElement("script");
+                newElem.src = src;
+                document.head.appendChild(newElem);
+            }
+
+            function onCustomer(data) {
+                console.log(data)
+            }
+
+            function onAnother(data) {
+                let message = `Получили иформацию не про Адама: ${JSON.stringify(data)}`
+                console.log(message)
+            }
+
+        </script>
+    </head>
+    <body>
+        <input onclick='addScript("http://localhost:4000/customer/13?callback=onCustomer")' type='button' value='customer'>
+        <input onclick='addScript("http://localhost:4000/customer/another?callback=onAnother")' type='button' value='another'>
+    </body>
+</html>
